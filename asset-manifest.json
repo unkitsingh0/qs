@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/unkitsingh0/qs/static/css/main.1a5b5971.css",
+    "main.js": "/unkitsingh0/qs/static/js/main.e0b97e60.js",
+    "static/media/aboutus.jpg": "/unkitsingh0/qs/static/media/aboutus.e3dfd0352748583b8a3e.jpg",
+    "index.html": "/unkitsingh0/qs/index.html",
+    "main.1a5b5971.css.map": "/unkitsingh0/qs/static/css/main.1a5b5971.css.map",
+    "main.e0b97e60.js.map": "/unkitsingh0/qs/static/js/main.e0b97e60.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a5b5971.css",
+    "static/js/main.e0b97e60.js"
+  ]
+}
