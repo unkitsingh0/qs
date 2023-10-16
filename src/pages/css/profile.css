@@ -1,0 +1,12 @@
+.container_profile {
+  display: flex;
+}
+.profileSideBar {
+  flex: 0.25;
+
+  margin-right: 0.3rem;
+}
+.profileInfo {
+  flex: 0.75;
+  border: 2px solid red;
+}

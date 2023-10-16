@@ -1,0 +1,48 @@
+.linkForm {
+}
+.HomeHeading {
+  color: rgb(12, 214, 12);
+}
+.linkForm input:focus {
+  border-color: rgb(12, 214, 12); /* Change the border color */
+  box-shadow: 0 0 0 0.2rem rgba(12, 214, 12, 0.25);
+}
+.linkForm textarea:focus {
+  border-color: rgb(12, 214, 12); /* Change the border color */
+  box-shadow: 0 0 0 0.2rem rgba(12, 214, 12, 0.25);
+}
+.btn-link {
+  background-color: rgb(12, 214, 12) !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+.btn-link:focus {
+  border-color: rgb(12, 214, 12) !important; /* Change the border color */
+  box-shadow: 0 0 0 0.2rem rgba(12, 214, 12, 0.25) !important;
+}
+.btn-link:hover {
+  background-color: white !important;
+  color: rgb(12, 214, 12) !important;
+  border: 1px solid rgb(12, 214, 12) !important;
+}
+.tAndD {
+  background-color: rgba(214, 244, 214, 0.5) !important;
+}
+
+.qrCode {
+}
+.main_qrCode {
+  /* border: 3px solid rgb(12, 214, 12); */
+  /* padding: 1px; */
+}
+
+.description span {
+  color: rgb(12, 214, 12);
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.clicks {
+  color: rgb(12, 214, 12);
+  font-size: 5rem;
+}

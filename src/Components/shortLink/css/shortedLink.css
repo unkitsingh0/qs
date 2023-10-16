@@ -1,0 +1,43 @@
+:root {
+  --bs-primary-bg-subtle: rgb(242, 248, 242) !important;
+
+  color: white !important;
+}
+
+.accordion {
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(12, 214, 12, 0.25) !important;
+}
+
+.title {
+  font-size: 1.1rem;
+  color: rgb(12, 214, 12);
+}
+
+.qrClick {
+  color: rgb(12, 214, 12);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.heading_accordion {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.accordion_clicks {
+  margin: 0 10px;
+  border: 2px solid rgb(12, 214, 12);
+  border-radius: 0.5rem;
+  padding: 0 10px;
+}
+.qr {
+  border: 2px solid rgb(12, 214, 12);
+  border-radius: 0.5rem;
+  padding: 0 10px;
+}
+
+@media (max-width: 450px) {
+  .qr {
+    display: none;
+  }
+}

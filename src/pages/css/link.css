@@ -1,0 +1,26 @@
+.display-4 {
+  color: rgb(12, 214, 12);
+}
+.CreateLink {
+  color: rgb(12, 214, 12);
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+.noLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.noLink svg {
+  color: rgb(12, 214, 12);
+
+  width: 35%;
+  height: 1%;
+}
+
+.pg-btn {
+  display: flex;
+  justify-content: space-between;
+}

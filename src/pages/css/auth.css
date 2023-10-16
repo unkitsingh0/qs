@@ -1,0 +1,53 @@
+.main_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 56px);
+}
+.child_container {
+  background-color: rgba(12, 214, 12, 0.05);
+  padding: 2rem;
+  border: 1px solid rgb(12, 214, 12);
+  border-radius: 1rem;
+  height: 60vh;
+  width: 50vw;
+  overflow: scroll;
+}
+.child_container::-webkit-scrollbar {
+  display: none;
+}
+.display_none {
+  display: none;
+}
+
+.active_tab {
+  background-color: rgb(12, 214, 12);
+  color: white !important;
+}
+.non_active_tab {
+  border: 0.1px solid rgb(12, 214, 12);
+}
+ul li {
+  margin: 0.1rem;
+}
+ul li p {
+  color: rgb(12, 214, 12) !important;
+  cursor: pointer;
+}
+
+.btn-color {
+  width: 80%;
+  background-color: rgb(12, 214, 12);
+  color: white;
+}
+.btn-color:hover {
+  background-color: white;
+  border: 1px solid rgb(12, 214, 12);
+  color: rgb(12, 214, 12);
+}
+
+@media (max-width: 767px) {
+  .child_container {
+    width: 80vw;
+  }
+}

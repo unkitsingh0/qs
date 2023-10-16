@@ -1,0 +1,28 @@
+.brand-name {
+  color: rgb(12, 214, 12);
+}
+/* Override the default dropdown position */
+.dropdown-menu[data-bs-popper="static"] {
+  left: auto !important;
+  right: 0;
+}
+
+/* Adjust the position of the dropdown arrow */
+.dropdown-toggle::after {
+  display: none;
+}
+
+/* .dropdown-toggle::before {
+  content: "\f104";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: 5px;
+} */
+.profile_icon {
+  border: 1px solid rgb(12, 214, 12);
+
+  color: rgb(12, 214, 12);
+  border: 2px solid;
+  border-radius: 0.7rem;
+  padding: 6px;
+}
