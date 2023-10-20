@@ -36,8 +36,11 @@
   padding: 0 10px;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 770px) {
   .qr {
+    display: none;
+  }
+  .hide_mouse {
     display: none;
   }
 }

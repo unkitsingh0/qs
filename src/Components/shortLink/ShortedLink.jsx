@@ -78,7 +78,7 @@ function ShortedLink({
                 {clicks}
                 <FontAwesomeIcon
                   icon="fa-solid fa-computer-mouse"
-                  className="ms-2"
+                  className="ms-2 hide_mouse"
                 />
               </span>
             </span>
