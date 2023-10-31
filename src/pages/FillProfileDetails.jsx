@@ -51,9 +51,10 @@ function FillProfileDetails() {
     }
   };
   return (
-    <div className="main_container">
+    <div className="main_container" style={{ flexDirection: "column" }}>
       {/* child contaienr that has login and signup form */}
-      <div className="child_container">
+      <h3 style={{ color: "rgb(12, 214, 12)" }}>Complete Your Profile</h3>
+      <div className="child_container mt-3">
         {/* Selection container */}
         <div className="selection_container">
           <ul className="nav nav-pills nav-fill">

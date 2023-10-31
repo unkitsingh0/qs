@@ -1,0 +1,26 @@
+.deleteOtp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+}
+.account_deletionForm {
+  border: 0.4px solid gray;
+  border-radius: 1rem;
+  width: 50vw;
+  background-color: rgba(227, 241, 227, 0.5);
+}
+
+.delete_btn {
+  display: flex;
+  justify-content: center;
+}
+.delete_btn button {
+  width: 50%;
+}
+@media (max-width: 500px) {
+  .delete_btn button {
+    width: 80%;
+  }
+}

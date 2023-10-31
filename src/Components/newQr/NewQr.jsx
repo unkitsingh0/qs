@@ -30,6 +30,7 @@ function NewQr({ title, text, description, index, id, from, deletefunction }) {
     setLoading(true);
     try {
       let { data } = await axios.delete(`${BaseUrl}/api/qr/${id}`);
+      console.log(data);
       if (data.status === "ok") {
         dispatch(deleteQrText(data.message));
         setLoading(false);
@@ -37,6 +38,7 @@ function NewQr({ title, text, description, index, id, from, deletefunction }) {
         return;
       }
     } catch (error) {
+      console.log(error.message);
       setLoading(false);
       toast.error("Something went wrong");
     }

@@ -10,16 +10,24 @@ export let fetchqrandtext = createAsyncThunk("fetchqrandtext", async (uid) => {
 
 let qrAndTextSlice = createSlice({
   name: "qrandtexts",
-  initialState: [],
+  initialState: {
+    isLoading: false,
+    data: [],
+  },
   reducers: {
     deleteQrText: (state, action) => {
-      return state.filter((link) => link._id !== action.payload._id);
+      state.data = state.data.filter((link) => link._id !== action.payload._id);
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchqrandtext.pending, (state, action) => {});
+    builder.addCase(fetchqrandtext.pending, (state, action) => {
+      state.isLoading = true;
+    });
     builder.addCase(fetchqrandtext.fulfilled, (state, action) => {
-      return action.payload;
+      console.log(action.payload);
+
+      state.isLoading = false;
+      state.data = action.payload;
     });
   },
 });

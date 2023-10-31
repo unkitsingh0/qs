@@ -10,16 +10,22 @@ export let fetchLink = createAsyncThunk("fetchLink", async (uid) => {
 
 let linksSlice = createSlice({
   name: "links",
-  initialState: [],
+  initialState: {
+    isLoading: false,
+    data: [],
+  },
   reducers: {
     deleteLink: (state, action) => {
-      return state.filter((link) => link._id !== action.payload._id);
+      state.data = state.data.filter((link) => link._id !== action.payload._id);
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchLink.pending, (state, action) => {});
+    builder.addCase(fetchLink.pending, (state, action) => {
+      state.isLoading = true;
+    });
     builder.addCase(fetchLink.fulfilled, (state, action) => {
-      return action.payload;
+      state.data = action.payload;
+      state.isLoading = false;
     });
   },
 });

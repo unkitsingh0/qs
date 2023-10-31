@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Toaster, toast } from "react-hot-toast";
 import "./css/navbar.css";
 function Navbar() {
   let [cookies, setCookies] = useCookies();
@@ -52,6 +53,11 @@ function Navbar() {
                       Qr-Codes
                     </NavLink>
                   </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/about">
+                      About
+                    </NavLink>
+                  </li>
                 </ul>
                 <ul className="navbar-nav me-2 mb-2 mb-lg-0">
                   <li className="nav-item dropdown ">
@@ -75,7 +81,13 @@ function Navbar() {
                         </Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" href="#">
+                        <Link
+                          className="dropdown-item"
+                          href="#"
+                          onClick={(e) => {
+                            toast("We are working on it!!!", { icon: "🧑‍🏭" });
+                          }}
+                        >
                           Buy Pro
                         </Link>
                       </li>
@@ -95,6 +107,9 @@ function Navbar() {
           ) : null}
         </div>
       </nav>
+      <div>
+        <Toaster />
+      </div>
     </div>
   );
 }

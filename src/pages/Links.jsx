@@ -6,6 +6,7 @@ import { useCookies } from "react-cookie";
 import ShortedLink from "../Components/shortLink/ShortedLink";
 import Accordion from "react-bootstrap/Accordion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { InfinitySpin } from "react-loader-spinner";
 import BaseUrl from "../Components/BaseUrl";
 import "./css/link.css";
 function Links() {
@@ -18,13 +19,13 @@ function Links() {
   //  pagination
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5; // Change this as needed
-  const totalItems = links.length; // Replace with the actual total number of items
+  const totalItems = links.data.length; // Replace with the actual total number of items
 
   // Calculate the range of items to display on the current page
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
-  const itemsToDisplay = links.slice(startIndex, endIndex);
+  const itemsToDisplay = links.data.slice(startIndex, endIndex);
 
   // Implement functions to handle pagination actions
   const nextPage = () => {
@@ -54,63 +55,70 @@ function Links() {
           </div>
         </div>
       </div>
-      {links.length === 0 ? (
-        <div className="noLink">
-          <h4>
-            No links found.
-            <span
-              className="CreateLink"
-              onClick={(e) => {
-                navigate("/");
-              }}
-            >
-              Create
-            </span>
-          </h4>
-          <FontAwesomeIcon icon="fa-solid fa-link-slash" />
+      {links.isLoading ? (
+        <div className="loader">
+          <InfinitySpin width="200" color="rgb(12, 214, 12)" />
         </div>
-      ) : (
-        <>
-          <Accordion defaultActiveKey={"0"}>
-            {itemsToDisplay &&
-              itemsToDisplay.map((item, index) => {
-                return (
-                  <ShortedLink
-                    key={item.shortLink}
-                    title={item.title}
-                    link={`${BaseUrl}/${item.shortLink}`}
-                    description={item.description}
-                    clicks={item.totalClicks}
-                    index={index}
-                    id={item._id}
-                  ></ShortedLink>
-                );
-              })}
-          </Accordion>
-          {/* Pagination controls */}
-          <div className="pg-btn mb-2">
-            <button
-              onClick={prevPage}
-              className="btn btn-link"
-              disabled={currentPage === 1}
-              style={{ width: "30%" }}
-            >
-              Previous
-            </button>
-            <p>
-              page {currentPage} 0f {Math.ceil(totalItems / 5)}
-            </p>
-            <button
-              className="btn btn-link"
-              style={{ width: "30%" }}
-              onClick={nextPage}
-              disabled={currentPage === Math.ceil(totalItems / itemsPerPage)}
-            >
-              Next
-            </button>
+      ) : null}
+      <div className={`${links.isLoading ? "noDisplay" : null}`}>
+        {links.data.length === 0 ? (
+          <div className="noLink">
+            <h4>
+              No links found.
+              <span
+                className="CreateLink"
+                onClick={(e) => {
+                  navigate("/");
+                }}
+              >
+                Create
+              </span>
+            </h4>
+            <FontAwesomeIcon icon="fa-solid fa-link-slash" />
           </div>
-        </>
-      )}
+        ) : (
+          <>
+            <Accordion defaultActiveKey={"0"}>
+              {itemsToDisplay &&
+                itemsToDisplay.map((item, index) => {
+                  return (
+                    <ShortedLink
+                      key={item.shortLink}
+                      title={item.title}
+                      link={`${BaseUrl}/${item.shortLink}`}
+                      description={item.description}
+                      clicks={item.totalClicks}
+                      index={index}
+                      id={item._id}
+                    ></ShortedLink>
+                  );
+                })}
+            </Accordion>
+            {/* Pagination controls */}
+            <div className="pg-btn mb-2">
+              <button
+                onClick={prevPage}
+                className="btn btn-link"
+                disabled={currentPage === 1}
+                style={{ width: "30%" }}
+              >
+                Previous
+              </button>
+              <p>
+                page {currentPage} 0f {Math.ceil(totalItems / 5)}
+              </p>
+              <button
+                className="btn btn-link"
+                style={{ width: "30%" }}
+                onClick={nextPage}
+                disabled={currentPage === Math.ceil(totalItems / itemsPerPage)}
+              >
+                Next
+              </button>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }

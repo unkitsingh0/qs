@@ -2,11 +2,59 @@
   display: flex;
 }
 .profileSideBar {
-  flex: 0.25;
-
   margin-right: 0.3rem;
+  width: auto;
+  flex: 0.25;
+}
+.profileSideBar ul li a {
+  text-decoration: none;
+  color: black;
+}
+.active_side_tab {
+  background-color: rgb(12, 214, 12);
+}
+.active_side_tab a {
+  color: white !important;
 }
 .profileInfo {
   flex: 0.75;
-  border: 2px solid red;
+  overflow-y: auto;
+}
+
+.personal_info {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: rgba(240, 249, 240, 0.5);
+}
+
+/* .personal_info_first_line {
+  display: flex;
+
+  justify-content: space-between;
+  flex: 0.5;
+}
+.personal_info_second_line {
+  display: flex;
+  justify-content: space-between;
+  flex: 0.5;
+} */
+.personal_info_heading_span {
+  color: rgb(12, 214, 12);
+  font-weight: 600;
+}
+.update_password {
+  border: 1px solid gray;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: rgba(240, 249, 240, 0.5);
+}
+.delete_account {
+  border: 1px solid gray;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: rgba(240, 249, 240, 0.5);
 }
